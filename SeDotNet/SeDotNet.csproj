@@ -1,0 +1,59 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <RuntimeIdentifier>win-x64</RuntimeIdentifier>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <SelfContained>true</SelfContained>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <EnableUnsafeBinaryFormatterSerialization>true</EnableUnsafeBinaryFormatterSerialization>
+  </PropertyGroup>
+  
+  <PropertyGroup>
+    <GameBinaries Condition="'$(GameBinaries)' == ''">$(MSBuildProjectDirectory)../../SpaceEngineersDedicatedServer/DedicatedServer64</GameBinaries>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Lib.Harmony" Version="2.4.2" />
+    <PackageReference Include="System.Management" Version="10.0.11" />
+    <PackageReference Include="System.Runtime.Serialization.Formatters" Version="10.0.11" />
+    <PackageReference Include="System.ServiceProcess.ServiceController" Version="10.0.11" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <Reference Include="SpaceEngineers.Game">
+      <HintPath>$(GameBinaries)/SpaceEngineers.Game.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VRage">
+      <HintPath>$(GameBinaries)/VRage.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VRage.Scripting">
+      <HintPath>$(GameBinaries)/VRage.Scripting.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis">
+      <HintPath>$(GameBinaries)/Microsoft.CodeAnalysis.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="VRage.Library">
+      <HintPath>$(GameBinaries)/VRage.Library.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SixLabors.ImageSharp">
+      <HintPath>$(GameBinaries)/SixLabors.ImageSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="SixLabors.Core">
+      <HintPath>$(GameBinaries)/SixLabors.Core.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+
+</Project>
