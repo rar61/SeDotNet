@@ -16,12 +16,6 @@ internal static class Resolver
 
         AssemblyLoadContext.Default.Resolving += (ctx, name) =>
         {
-            if (name.Name == "System.Windows.Forms.DataVisualization")
-            {
-                var path = Path.Combine(AppContext.BaseDirectory, "WinForms.DataVisualization.dll");
-                return File.Exists(path) ? ctx.LoadFromAssemblyPath(path) : null;
-            }
-
             var assemblyName = Path.Combine(dllPath, name.Name + ".dll");
             return File.Exists(assemblyName) ? ctx.LoadFromAssemblyPath(assemblyName) : null;
         };
