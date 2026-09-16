@@ -10,7 +10,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var basePath = Path.GetDirectoryName(typeof(Program).Assembly.Location);
+        var basePath = Path.GetDirectoryName(Environment.ProcessPath);
         Debug.Assert(basePath != null, nameof(basePath) + " != null");
         basePath = Path.GetFullPath(Path.Combine(basePath, "..", "SpaceEngineersDedicatedServer"));
 

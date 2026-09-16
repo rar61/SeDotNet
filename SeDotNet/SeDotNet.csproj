@@ -58,6 +58,10 @@
       <HintPath>$(GameBinaries)/SixLabors.Core.dll</HintPath>
       <Private>false</Private>
     </Reference>
+    <Reference Include="VRage.Dedicated">
+      <HintPath>$(GameBinaries)/VRage.Dedicated.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
   </ItemGroup>
 
 </Project>
